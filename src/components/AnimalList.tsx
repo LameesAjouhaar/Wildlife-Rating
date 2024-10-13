@@ -22,7 +22,7 @@ const AnimalList: React.FC = () => {
         setLoading(true);
         try {
             const response = await axios.get(`https://api.api-ninjas.com/v1/animals?name=${animalName}`, {
-                headers: { 'X-Api-Key': "AOkvDw6GY8tz9DbmSPre5Q==YRk8FTMGIMr0cw95" },
+                headers: { 'X-Api-Key': process.env.REACT_APP_API_KEY! },
             });
             setAnimals(response.data);
         } catch (error) {
